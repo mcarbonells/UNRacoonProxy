@@ -3,4 +3,4 @@ services:
   sa-proxy:
     build: .
     ports:
-      - "80:80"
+      - "443:443"
