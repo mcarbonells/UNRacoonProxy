@@ -1,6 +1,0 @@
-version: '2.1'
-services:
-  sa-proxy:
-    build: .
-    ports:
-      - "443:443"
