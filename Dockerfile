@@ -4,10 +4,10 @@ ENV NODE_ROOT /var/www/api-gateway
 WORKDIR $NODE_ROOT
 RUN mkdir log
 COPY app.conf /tmp/app.nginx
-COPY ssl/server.crt /etc/ssl/certs/
-COPY ssl/server.key /etc/ssl/certs/
+COPY ssl/localhost.crt /etc/ssl/certs/
+COPY ssl/localhost.key /etc/ssl/certs/
 RUN envsubst '$NODE_ROOT' < /tmp/app.nginx > /etc/nginx/conf.d/default.conf
 
-EXPOSE 5000
+EXPOSE 443
 
 CMD [ "nginx", "-g", "daemon off;" ]
