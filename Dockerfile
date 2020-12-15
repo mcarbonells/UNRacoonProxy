@@ -8,6 +8,6 @@ COPY ssl/localhost.crt /etc/ssl/certs/
 COPY ssl/localhost.key /etc/ssl/certs/
 RUN envsubst '$NODE_ROOT' < /tmp/app.nginx > /etc/nginx/conf.d/default.conf
 
-EXPOSE 80
+EXPOSE 443
 
 CMD [ "nginx", "-g", "daemon off;" ]
